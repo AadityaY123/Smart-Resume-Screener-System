@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Matching Result</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f4f4f4;
+            padding:40px;
+        }
+
+        .container{
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            width:700px;
+            margin:auto;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            text-align:center;
+        }
+
+        .score{
+            font-size:40px;
+            color:green;
+            text-align:center;
+        }
+
+        ul{
+            line-height:2;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:20px;
+            padding:10px 20px;
+            background:#007bff;
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Resume Matching Result</h1>
+
+        <div class="score">
+
+            {{ score }}%
+
+        </div>
+
+        <hr>
+
+        <h2>Experience</h2>
+
+        <p>
+            {{ experience }} Years
+        </p>
+
+        <h2>Matched Skills</h2>
+
+        <ul>
+
+            {% for skill in matched %}
+
+                <li>{{ skill }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+        <h2>Missing Skills</h2>
+
+        <ul>
+
+            {% for skill in missing %}
+
+                <li>{{ skill }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+        <h2>Explanation</h2>
+
+        <p>
+            {{ explanation }}
+        </p>
+
+        <a href="/" class="btn">
+            Try Another
+        </a>
+
+    </div>
+
+</body>
+
+</html>
